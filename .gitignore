@@ -3,6 +3,6 @@
 !.gitignore
 !.hyper.js
 !.zshrc
-!.oh-my-zsh
+!.oh-my-zsh/*
 !.vimrc
 !.gitconfig
