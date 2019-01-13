@@ -12,7 +12,7 @@ module.exports = {
     fontSize: 14,
 
     // font family with optional fallbacks
-    fontFamily: '"Source Code Pro", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -27,7 +27,7 @@ module.exports = {
     cursorAccentColor: '#000',
 
     // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
-    cursorShape: 'BLOCK',
+    cursorShape: 'UNDERLINE',
 
     // set to `true` (without backticks and without quotes) for blinking cursor
     cursorBlink: false,
@@ -68,13 +68,13 @@ module.exports = {
     // an array here instead of a color map object
     colors: {
       black: '#000000',
-      red: '#C51E14',
+      red: '#e51509',
       green: '#ade00a',
       yellow: '#ffee00',
       blue: '#05dff3',
       magenta: '#f73392',
       cyan: '#30e6da',
-      white: '#eee8d5',
+      white: '#fff',
       lightBlack: '#686868',
       lightRed: '#f1591a',
       lightGreen: '#c8e204',
@@ -84,6 +84,8 @@ module.exports = {
       lightCyan: '#00f8c6',
       lightWhite: '#FFFFFF',
     },
+
+    // lightRed: '#f1591a',
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
