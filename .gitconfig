@@ -1,7 +1,0 @@
-[user]
-	name = onval
-	email = giorgio.valbonesi@gmail.com
-[core]
-	pager = less -F -X
-[alias]
-	lg = log --oneline --decorate

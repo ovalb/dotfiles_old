@@ -1,8 +1,0 @@
-*
-
-!.gitignore
-!.hyper.js
-!.zshrc
-!.oh-my-zsh/*
-!.vimrc
-!.gitconfig
