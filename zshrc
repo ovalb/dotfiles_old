@@ -7,7 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="zshen"
+ZSH_THEME="ontheme"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -24,6 +24,11 @@ export ANDROID_AVD_HOME="$HOME/.android/avd"
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$ANDROID_AVD_HOME"
 export CLICOLORS=1
+
+#tail -f PHP_MAMP_LOG to print output dinamically to a terminal
+export PHP_MAMP_LOG="/Applications/MAMP/logs/php_error.log"
+export POSTGRES_LOG="/usr/local/var/postgres/log/server.log"
+
 #Java var home:
 #export JAVA_HOME="/usr/libexec/java_home"
 
@@ -60,12 +65,6 @@ DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
