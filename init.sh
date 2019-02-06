@@ -24,7 +24,7 @@ cp $HOME/.dotfiles/noctu.vim $HOME/.vim/colors
 
 
 #link tmux.conf
-if [[ -f "$HOME/.tmux.conf" ]] then
+if [[ -f "$HOME/.tmux.conf" ]]; then
 	cp $HOME/.tmux.conf $HOME/.tmux.conf.old
 	echo "Your tmux.conf has been backed up to .tmux.conf.old"
 fi
