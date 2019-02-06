@@ -2,19 +2,35 @@
 # Set up a new mac os system with this script
 
 #backup .zshrc and .vimrc
-if [[ ! -e "$HOME/.zshrc" ]]; then
+if [[ -f "$HOME/.zshrc" ]]; then
    cp $HOME/.zshrc $HOME/.zshrc.old
    echo "Your old zshrc has been backed up to .zshrc.old"
 fi
 
-if [[ ! -e "$HOME/.vimrc" ]]; then
+if [[ -f "$HOME/.vimrc" ]]; then
    cp $HOME/.vimrc $HOME/.vimrc.old
    echo "You old vimrc has been backed up to .vimrc.old"
 fi
 
 #link them to the .dotfiles
 echo "source $HOME/.dotfiles/zshrc" > $HOME/.zshrc
+echo ".zshrc has been linked to dotfiles folder"
+
 echo "source $HOME/.dotfiles/vimrc" > $HOME/.vimrc
+echo ".vimrc has been linked to dotfiles folder"
+
+mkdir $HOME/.vim/colors
+cp $HOME/.dotfiles/noctu.vim $HOME/.vim/colors
+
+
+#link tmux.conf
+if [[ -f "$HOME/.tmux.conf" ]] then
+	cp $HOME/.tmux.conf $HOME/.tmux.conf.old
+	echo "Your tmux.conf has been backed up to .tmux.conf.old"
+fi
+
+echo "source $HOME/.dotfiles/tmux.conf" > $HOME/.tmux.conf
+echo ".tmux.conf has been linked to dotfiles folder"
 
 #install oh-my-zsh
 if [[ ! -e "$HOME/.oh-my-zsh" ]]; then
