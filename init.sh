@@ -35,8 +35,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo "source $HOME/.dotfiles/tmux.conf" > $HOME/.tmux.conf
 echo ".tmux.conf has been linked to dotfiles folder"
 
-set-window-option -g pane-base-index 1
-
 #install oh-my-zsh
 if [[ ! -e "$HOME/.oh-my-zsh" ]]; then
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
