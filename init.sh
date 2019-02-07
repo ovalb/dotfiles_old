@@ -29,8 +29,13 @@ if [[ -f "$HOME/.tmux.conf" ]]; then
 	echo "Your tmux.conf has been backed up to .tmux.conf.old"
 fi
 
+#install tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 echo "source $HOME/.dotfiles/tmux.conf" > $HOME/.tmux.conf
 echo ".tmux.conf has been linked to dotfiles folder"
+
+set-window-option -g pane-base-index 1
 
 #install oh-my-zsh
 if [[ ! -e "$HOME/.oh-my-zsh" ]]; then
@@ -47,6 +52,7 @@ if [[ ! -e "/usr/local/Homebrew" ]]; then
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	echo "Homebrew installed"
 
-	#install iterm
+	#install software
 	brew cask install iterm2
+	brew cask install alfred
 fi
