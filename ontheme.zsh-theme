@@ -1,4 +1,4 @@
-# watwoot.zsh-theme
+# ontheme.zsh-theme
 # fork of sorin theme
 # made by gval
 
@@ -12,7 +12,7 @@ if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
   MODE_INDICATOR="%{$fg_bold[red]%}❮%{$reset_color%}%{$fg[red]%}❮❮%{$reset_color%}"
   local return_status="%{$fg[red]%}%(?..⏎)%{$reset_color%}"
 
-  PROMPT='$_PATHCOL%5~$(git_prompt_info)%(!.%{$fg[white]%}:.%{$fg[white]%}:)%{$reset_color%} '
+  PROMPT='$_PATHCOL%3~$(git_prompt_info)%(!.%{$fg[white]%}:.%{$fg[white]%}:)%{$reset_color%} '
 
   ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[white]%}on%{$reset_color%} %{$fg[red]%}"
   ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
