@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 
 conky.config = {
-    alignment = 'top_right',
+    alignment = 'top_left',
     background = false,
     border_width = 1,
     cpu_avg_samples = 2,
@@ -38,7 +38,7 @@ conky.config = {
     draw_outline = false,
     draw_shades = false,
     use_xft = true,
-    font = 'Ubuntu Mono:size=11',
+    font = 'Ubuntu Mono:size=12',
     gap_x = 5,
     gap_y = 60,
     minimum_height = 5,
@@ -64,14 +64,6 @@ own_window_class = 'override',
 }
 
 conky.text = [[
-$nodename - $sysname $kernel
-$hr
-${color lightgrey}RAM Usage:$color $mem / $memmax
-${color lightgrey}Swap Usage:$color $swap / $swapmax
-${color lightgrey}CPU Usage:$color $cpu% ${cpubar 6}
-$hr
-${color lightgrey}File systems:
- / $color${fs_used /}/${fs_size /} ${fs_bar 6 /}
-$hr
-${color lightgrey}Local IP: $color ${addr ens33}
+${color lightgrey}${exec lsb_release -a 2>/dev/null | grep Description | cut -f2}
+${color lightgrey}IP: $color${addr ens33}
 ]]
