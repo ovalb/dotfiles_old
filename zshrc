@@ -29,6 +29,7 @@ export CLICOLORS=1
 export PHP_MAMP_LOG="/Applications/MAMP/logs/php_error.log"
 export POSTGRES_LOG="/usr/local/var/postgres/log/server.log"
 
+export GOOGLE_APPLICATION_CREDENTIALS="$HOME/Downloads/service-key.json"
 #Java var home:
 #export JAVA_HOME="/usr/libexec/java_home"
 
