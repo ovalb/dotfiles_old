@@ -54,6 +54,9 @@ alias ls="ls -G"
 alias grep="grep --color=auto"
 alias dock-stat="docker run --rm -ti -p 127.0.0.1:8888:8888 -v $(pwd):/home/jovyan/my-work dariomalchiodi/sad"
 
+opt() {
+	man $1 | awk 'BEGIN{print "OPTIONS"} /^ +-/' | less
+}
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
