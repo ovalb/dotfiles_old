@@ -22,7 +22,7 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export ANDROID_SDK_HOME="$HOME/Library/Android/sdk/platform-tools"
 export ANDROID_AVD_HOME="$HOME/.android/avd"
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$ANDROID_AVD_HOME"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$ANDROID_AVD_HOME:/usr/local/Cellar/binutils/2.34/bin"
 export CLICOLORS=1
 
 #tail -f PHP_MAMP_LOG to print output dinamically to a terminal
@@ -53,10 +53,24 @@ export PGDATA="/usr/local/var/postgres"
 alias ls="ls -G"
 alias grep="grep --color=auto"
 alias dock-stat="docker run --rm -ti -p 127.0.0.1:8888:8888 -v $(pwd):/home/jovyan/my-work dariomalchiodi/sad"
+alias adbconn='adb connect $(adb shell ifconfig wlan0 | grep "inet addr" | cut -f2 -d: | cut -f1 -d" "):5555'
 
 opt() {
 	man $1 | awk 'BEGIN{print "OPTIONS"} /^ +-/' | less
 }
+
+start-ubuntu() {
+	VOLUME=$(pwd)
+	if [[ -n $1 ]]; then; VOLUME=$1; fi
+	docker run --rm -it --hostname ubuntu -v $VOLUME:/home/moln/work --cap-add=SYS_PTRACE --security-opt seccomp=unconfined dockuntu
+}
+
+start-ubuntu-root() {
+	VOLUME=$(pwd)
+	if [[ -n $1 ]]; then; VOLUME=$1; fi
+	docker run --rm -it --user root --hostname ubuntu -v $VOLUME:/home/moln/work --cap-add=SYS_PTRACE --security-opt seccomp=unconfined dockuntu
+}
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -97,4 +111,3 @@ if [ -f "$HOME/Downloads/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/Do
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc"; fi
-alias adbconn='adb connect $(adb shell ifconfig wlan0 | grep "inet addr" | cut -f2 -d: | cut -f1 -d" "):5555'
