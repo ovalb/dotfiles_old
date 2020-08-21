@@ -1,0 +1,13 @@
+[user]
+	name = Giorgio
+	email = Valbonesi
+[core]
+	pager = less -F -X
+[alias]
+	lg = log --oneline --decorate
+[credential]
+	helper = osxkeychain
+[github]
+	user = onVal
+[ghi]
+	token = !security find-internet-password -a onVal -s github.com -l 'ghi token' -w
