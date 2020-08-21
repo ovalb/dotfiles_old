@@ -1,5 +1,7 @@
-"onval's .vimrc
-"This installs the vim-plug plugin manager automatically 
+"my vimrc with 'plug' as a plugin manager
+"add a plugin by Plug <plugin name>
+"reload vimrc with :source ~/.vimrc from within vim itself
+"run :PlugInstall
 if empty(glob('~/.vim/autoload/plug.vim'))
 	  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
 	      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -12,6 +14,7 @@ call plug#begin('~/.vim/plugged')
 
 "Here are my plugins
 Plug 'lifepillar/pgsql.vim'
+Plug 'preservim/nerdcommenter'
 
 call plug#end()
 
@@ -30,3 +33,4 @@ set cursorline
 set t_Co=256 "fixes tmux issue
 
 colorscheme noctu
+
