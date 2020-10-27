@@ -22,8 +22,12 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export ANDROID_SDK_HOME="$HOME/Library/Android/sdk/platform-tools"
 export ANDROID_AVD_HOME="$HOME/.android/avd"
 export DEV_HOME="$HOME/development"
+export PROMPT_EOL_MARK=''
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$ANDROID_AVD_HOME:/usr/local/Cellar/binutils/2.34/bin:$DEV_HOME/flutter/bin"
+
+export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
+
 export CLICOLORS=1
 
 #tail -f PHP_MAMP_LOG to print output dinamically to a terminal
@@ -53,9 +57,12 @@ export PGDATA="/usr/local/var/postgres"
 # For a full list of active aliases, run `alias`.
 alias ls="ls -G"
 alias grep="grep --color=auto"
+alias dc="docker-compose"
 alias dock-stat="docker run --rm -ti -p 127.0.0.1:8888:8888 -v $(pwd):/home/jovyan/my-work dariomalchiodi/sad"
 alias adbconn='adb connect $(adb shell ifconfig wlan0 | grep "inet addr" | cut -f2 -d: | cut -f1 -d" "):5555'
 #alias git-cp='git add -A && git commit -m "$(git status | grep -E '(new|modified|deleted)')"' 
+alias g++="g++ -std=c++14"
+alias update-vlbn="ssh -t vlbnjsrx@198.54.126.114 -p 21098 \"cd public_html; git pull\""
 
 opt() {
 	man $1 | awk 'BEGIN{print "OPTIONS"} /^ +-/' | less

@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
 "Here are my plugins
 Plug 'lifepillar/pgsql.vim'
 Plug 'preservim/nerdcommenter'
+Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
 
@@ -32,5 +33,5 @@ set noswapfile
 set cursorline
 set t_Co=256 "fixes tmux issue
 
-colorscheme noctu
+colorscheme pablo
 
