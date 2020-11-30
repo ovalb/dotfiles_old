@@ -8,6 +8,8 @@
 	st = status
 	co = checkout
 	cp = !git add -A && git commit -m "$(git status | grep -E '(new|modified|deleted)')"
+	sw = switch
+	cm = commit
 [credential]
 	helper = osxkeychain
 [github]

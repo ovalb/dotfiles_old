@@ -57,7 +57,7 @@ export PGDATA="/usr/local/var/postgres"
 # For a full list of active aliases, run `alias`.
 alias ls="ls -G"
 alias grep="grep --color=auto"
-alias dc="docker-compose"
+alias dcmp="docker-compose"
 alias dock-stat="docker run --rm -ti -p 127.0.0.1:8888:8888 -v $(pwd):/home/jovyan/my-work dariomalchiodi/sad"
 alias adbconn='adb connect $(adb shell ifconfig wlan0 | grep "inet addr" | cut -f2 -d: | cut -f1 -d" "):5555'
 #alias git-cp='git add -A && git commit -m "$(git status | grep -E '(new|modified|deleted)')"' 
