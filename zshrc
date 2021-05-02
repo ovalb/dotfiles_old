@@ -17,6 +17,7 @@ ZSH_THEME="ontheme"
 
 source $ZSH/oh-my-zsh.sh
 
+
 # User configuration
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export ANDROID_SDK_HOME="$HOME/Library/Android/sdk/platform-tools"
@@ -24,9 +25,13 @@ export ANDROID_AVD_HOME="$HOME/.android/avd"
 export DEV_HOME="$HOME/development"
 export PROMPT_EOL_MARK=''
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$ANDROID_AVD_HOME:/usr/local/Cellar/binutils/2.34/bin:$DEV_HOME/flutter/bin"
+export LANG=en_US.UTF-8
 
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/Cellar/binutils/2.34/bin:$DEV_HOME/flutter/bin:/$HOME/go/bin"
+
+export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$ANDROID_AVD_HOME"
 export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
+export PATH="$PATH:/Applications/Wireshark.app/Contents/MacOS"
 
 export CLICOLORS=1
 
@@ -63,6 +68,9 @@ alias adbconn='adb connect $(adb shell ifconfig wlan0 | grep "inet addr" | cut -
 #alias git-cp='git add -A && git commit -m "$(git status | grep -E '(new|modified|deleted)')"' 
 alias g++="g++ -std=c++14"
 alias update-vlbn="ssh -t vlbnjsrx@198.54.126.114 -p 21098 \"cd public_html; git pull\""
+alias dc="cd"
+alias python="/usr/local/bin/python3"
+
 
 opt() {
 	man $1 | awk 'BEGIN{print "OPTIONS"} /^ +-/' | less
