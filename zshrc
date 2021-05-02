@@ -1,5 +1,6 @@
 #THIS FILE HAS TO BE HIDDEN IN THE HOME DIRECTORY
-#
+source $HOME/.dotfiles/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -16,7 +17,6 @@ ZSH_THEME="ontheme"
 # plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-
 
 # User configuration
 export ANDROID_HOME="$HOME/Library/Android/sdk"
