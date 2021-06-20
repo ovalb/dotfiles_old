@@ -10,6 +10,8 @@
 	cp = !git add -A && git commit -m "$(git status | grep -E '(new|modified|deleted)')"
 	sw = switch
 	cm = commit
+	root = rev-parse --show-toplevel
+	ls = ls-tree -r --name-only
 [credential]
 	helper = osxkeychain
 [github]
@@ -20,3 +22,9 @@
 	tool = vscode
 [difftool "vscode"]
 	cmd = code -w -d -n $LOCAL $REMOTE
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

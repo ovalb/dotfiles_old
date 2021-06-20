@@ -44,7 +44,7 @@ alias ls="ls -G"
 alias dc="cd"
 alias grep="grep --color=auto"
 alias g++="g++ -std=c++14"
-alias dcmp="docker-compose"
+alias dcmp="docker compose"
 alias python="/usr/local/bin/python3"
 
 #alias dock-stat="docker run --rm -ti -p 127.0.0.1:8888:8888 -v $(pwd):/home/jovyan/my-work dariomalchiodi/sad"
@@ -55,6 +55,23 @@ alias python="/usr/local/bin/python3"
 opt() {
 	man $1 | awk 'BEGIN{print "OPTIONS"} /^ +-/' | less
 }
+
+playgo() {
+	cd ~/Playground
+	mkdir $1
+	cd $1
+	touch main.go
+	echo 'package main\n\nimport "fmt"\n\nfunc main() {\n\tfmt.Println("hi")\n}' > main.go
+	code -n main.go
+}
+
+playpy() {
+	cd ~/Playground
+	mkdir $1
+	cd $1
+	jupyter lab
+}
+
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
