@@ -5,7 +5,7 @@ source $HOME/.dotfiles/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 export ZSH=$HOME/.oh-my-zsh
 
 # Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="ontheme"
+ZSH_THEME="miloshadzic"
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
@@ -46,11 +46,10 @@ alias grep="grep --color=auto"
 alias g++="g++ -std=c++14"
 alias dcmp="docker compose"
 alias python="/usr/local/bin/python3"
-
+alias t="todo.sh"
 #alias dock-stat="docker run --rm -ti -p 127.0.0.1:8888:8888 -v $(pwd):/home/jovyan/my-work dariomalchiodi/sad"
 #alias adbconn='adb connect $(adb shell ifconfig wlan0 | grep "inet addr" | cut -f2 -d: | cut -f1 -d" "):5555'
 #alias git-cp='git add -A && git commit -m "$(git status | grep -E '(new|modified|deleted)')"' 
-#alias update-vlbn="ssh -t vlbnjsrx@198.54.126.114 -p 21098 \"cd public_html; git pull\""
 
 opt() {
 	man $1 | awk 'BEGIN{print "OPTIONS"} /^ +-/' | less
