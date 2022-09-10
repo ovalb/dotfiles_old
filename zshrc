@@ -1,6 +1,8 @@
 #THIS FILE HAS TO BE HIDDEN IN THE HOME DIRECTORY
 source $HOME/.dotfiles/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
+# source /usr/local/Cellar/fzf/0.33.0/shell/completion.zsh
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -18,16 +20,18 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export ANDROID_SDK_HOME="$HOME/Library/Android/sdk/platform-tools"
 export ANDROID_AVD_HOME="$HOME/.android/avd"
 export DEV_HOME="$HOME/development"
+export WIRESHARK_HOME="/Applications/Wireshark.app/Contents/MacOS"
+export RUBY_PATHS="$HOME/.gem/ruby/2.6.0/bin:$HOME/.rvm/bin"
 export PROMPT_EOL_MARK=''
 
 export LANG=en_US.UTF-8
 
-export GOROOT="$HOME/go"
+export GOPATH="$HOME/go"
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/Cellar/binutils/2.34/bin:$DEV_HOME/flutter/bin:/$GOROOT/bin"
-export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$ANDROID_AVD_HOME"
-export PATH="$PATH:/Applications/Wireshark.app/Contents/MacOS"
-export PATH="$PATH:/$HOME/.gem/ruby/2.6.0/bin:$HOME/.rvm/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/Cellar/binutils/2.34/bin:
+	$DEV_HOME/flutter/bin:$DEV_HOME/google-cloud-sdk/bin/$GOPATH/bin:
+	/$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$ANDROID_AVD_HOME:$WIRESHARK_HOME":$RUBY_PATHS
+
 export CLICOLORS=1
 
 export PHP_MAMP_LOG="/Applications/MAMP/logs/php_error.log"
@@ -44,11 +48,15 @@ export PGDATA="/usr/local/var/postgres"
 alias ls="ls -G"
 alias dc="cd"
 alias grep="grep --color=auto"
+alias g="git"
 alias g++="g++ -std=c++14"
+
+alias dk="docker"
 alias dcmp="docker compose"
+
+alias hist="history | fzf"
+
 alias python="/usr/local/bin/python3"
-alias t="todo.sh"
-alias swagger="docker run --rm -it  --user $(id -u):$(id -g) -e GOPATH=$HOME/go:/go -v $HOME:$HOME -w $(pwd) quay.io/goswagger/swagger"
 alias piplist="pipdeptree -l | grep '^[a-z]'"
 alias pmon="python /usr/local/bin/portmon.py"
 #alias dock-stat="docker run --rm -ti -p 127.0.0.1:8888:8888 -v $(pwd):/home/jovyan/my-work dariomalchiodi/sad"
@@ -58,23 +66,6 @@ alias pmon="python /usr/local/bin/portmon.py"
 opt() {
 	man $1 | awk 'BEGIN{print "OPTIONS"} /^ +-/' | less
 }
-
-playgo() {
-	cd ~/Playground
-	mkdir $1
-	cd $1
-	touch main.go
-	echo 'package main\n\nimport "fmt"\n\nfunc main() {\n\tfmt.Println("hi")\n}' > main.go
-	code -n main.go
-}
-
-playpy() {
-	cd ~/Playground
-	mkdir $1
-	cd $1
-	jupyter lab
-}
-
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"

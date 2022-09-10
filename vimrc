@@ -12,6 +12,7 @@ set noswapfile
 set cursorline
 set t_Co=256 
 
+imap jj <Esc>
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
