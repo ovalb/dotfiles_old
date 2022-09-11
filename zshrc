@@ -1,6 +1,8 @@
 #THIS FILE HAS TO BE HIDDEN IN THE HOME DIRECTORY
 source /usr/local/Cellar/fzf/0.33.0/shell/completion.zsh
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -12,6 +14,9 @@ ZSH_THEME="miloshadzic"
 # plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+# Created by `pipx` on 2022-02-11 15:54:10
+export PATH="$PATH:/Users/onval/.local/bin"
 
 # User configuration
 export ANDROID_HOME="$HOME/Library/Android/sdk"
