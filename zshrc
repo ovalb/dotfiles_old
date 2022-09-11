@@ -15,13 +15,10 @@ ZSH_THEME="miloshadzic"
 
 source $ZSH/oh-my-zsh.sh
 
-# Created by `pipx` on 2022-02-11 15:54:10
-export PATH="$PATH:/Users/onval/.local/bin"
-
 # User configuration
 export ANDROID_HOME="$HOME/Library/Android/sdk"
-export ANDROID_SDK_HOME="$HOME/Library/Android/sdk/platform-tools"
 export ANDROID_AVD_HOME="$HOME/.android/avd"
+
 export DEV_HOME="$HOME/development"
 export WIRESHARK_HOME="/Applications/Wireshark.app/Contents/MacOS"
 export RUBY_PATHS="$HOME/.gem/ruby/2.6.0/bin:$HOME/.rvm/bin"
@@ -32,8 +29,13 @@ export LANG=en_US.UTF-8
 export GOPATH="$HOME/go"
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin"
+# Created by `pipx` on 2022-02-11 15:54:10
+export PATH="$PATH:/Users/onval/.local/bin"
+
 export PATH="$PATH:/usr/local/Cellar/binutils/2.34/bin"
-export PATH="$PATH:$DEV_HOME/flutter/bin:$DEV_HOME/google-cloud-sdk/bin/$GOPATH/bin"
+export PATH="$PATH:$DEV_HOME/flutter/bin:$DEV_HOME/google-cloud-sdk/bin"
+export PATH="$PATH:$HOME/go/bin"
+
 export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$ANDROID_AVD_HOME"
 export PATH="$PATH:$WIRESHARK_HOME:$RUBY_PATHS"
 
@@ -66,7 +68,6 @@ alias python="/usr/local/bin/python3"
 alias piplist="pipdeptree -l | grep '^[a-z]'"
 alias pmon="python /usr/local/bin/portmon.py"
 
-#alias adbconn='adb connect $(adb shell ifconfig wlan0 | grep "inet addr" | cut -f2 -d: | cut -f1 -d" "):5555'
 #alias git-cp='git add -A && git commit -m "$(git status | grep -E '(new|modified|deleted)')"' 
 
 opt() {
